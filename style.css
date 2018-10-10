@@ -1,0 +1,35 @@
+
+body {
+    font-family: Helvetica;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+#colorTurn {
+    font-size: 20px;
+}
+
+#gameBoard {
+    margin: 20px auto;
+    display: table;
+    width: 490px;
+    height: 425px;
+    background: forestgreen;
+    border: 1px solid black;
+}
+
+.row{
+    display: table;
+}
+
+.square {
+    display: table-cell;
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+}
