@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Reversi Hackathon #1</title>
+
+</head>
+<body>
+    <h1>Reversi</h1>
+
+    <div id="colorTurn">Black Turn</div>
+
+    <div id="gameBoard">
+
+        <div class="row">
+            <div class="square" id="square0-0" onclick="selectSquare(0,0);"><div class="chip"></div></div>
+            <div class="square" id="square0-1" onclick="selectSquare(0,1);"><div class="chip"></div></div>
+            <div class="square" id="square0-2" onclick="selectSquare(0,2);"><div class="chip"></div></div>
+            <div class="square" id="square0-3" onclick="selectSquare(0,3);"><div class="chip"></div></div>
+            <div class="square" id="square0-4" onclick="selectSquare(0,4);"><div class="chip"></div></div>
+            <div class="square" id="square0-5" onclick="selectSquare(0,5);"><div class="chip"></div></div>
+            <div class="square" id="square0-6" onclick="selectSquare(0,6);"><div class="chip"></div></div>
+            <div class="square" id="square0-7" onclick="selectSquare(0,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square1-0" onclick="selectSquare(1,0);"><div class="chip"></div></div>
+            <div class="square" id="square1-1" onclick="selectSquare(1,1);"><div class="chip"></div></div>
+            <div class="square" id="square1-2" onclick="selectSquare(1,2);"><div class="chip"></div></div>
+            <div class="square" id="square1-3" onclick="selectSquare(1,3);"><div class="chip"></div></div>
+            <div class="square" id="square1-4" onclick="selectSquare(1,4);"><div class="chip"></div></div>
+            <div class="square" id="square1-5" onclick="selectSquare(1,5);"><div class="chip"></div></div>
+            <div class="square" id="square1-6" onclick="selectSquare(1,6);"><div class="chip"></div></div>
+            <div class="square" id="square1-7" onclick="selectSquare(1,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square2-0" onclick="selectSquare(2,0);"><div class="chip"></div></div>
+            <div class="square" id="square2-1" onclick="selectSquare(2,1);"><div class="chip"></div></div>
+            <div class="square" id="square2-2" onclick="selectSquare(2,2);"><div class="chip"></div></div>
+            <div class="square" id="square2-3" onclick="selectSquare(2,3);"><div class="chip"></div></div>
+            <div class="square" id="square2-4" onclick="selectSquare(2,4);"><div class="chip"></div></div>
+            <div class="square" id="square2-5" onclick="selectSquare(2,5);"><div class="chip"></div></div>
+            <div class="square" id="square2-6" onclick="selectSquare(2,6);"><div class="chip"></div></div>
+            <div class="square" id="square2-7" onclick="selectSquare(2,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="cell" id="square3-0" onclick="selectSquare(3,0);"><div class="chip"></div></div>
+            <div class="cell" id="square3-1" onclick="selectSquare(3,1);"><div class="chip"></div></div>
+            <div class="cell" id="square3-2" onclick="selectSquare(3,2);"><div class="chip"></div></div>
+            <div class="cell" id="square3-3" onclick="selectSquare(3,3);"><div class="chip"></div></div>
+            <div class="cell" id="square3-4" onclick="selectSquare(3,4);"><div class="chip"></div></div>
+            <div class="cell" id="square3-5" onclick="selectSquare(3,5);"><div class="chip"></div></div>
+            <div class="cell" id="square3-6" onclick="selectSquare(3,6);"><div class="chip"></div></div>
+            <div class="cell" id="square3-7" onclick="selectSquare(3,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square4-0" onclick="selectSquare(4,0);"><div class="chip"></div></div>
+            <div class="square" id="square4-1" onclick="selectSquare(4,1);"><div class="chip"></div></div>
+            <div class="square" id="square4-2" onclick="selectSquare(4,2);"><div class="chip"></div></div>
+            <div class="square" id="square4-3" onclick="selectSquare(4,3);"><div class="chip"></div></div>
+            <div class="square" id="square4-4" onclick="selectSquare(4,4);"><div class="chip"></div></div>
+            <div class="square" id="square4-5" onclick="selectSquare(4,5);"><div class="chip"></div></div>
+            <div class="square" id="square4-6" onclick="selectSquare(4,6);"><div class="chip"></div></div>
+            <div class="square" id="square4-7" onclick="selectSquare(4,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square5-0" onclick="selectSquare(5,0);"><div class="chip"></div></div>
+            <div class="square" id="square5-1" onclick="selectSquare(5,1);"><div class="chip"></div></div>
+            <div class="square" id="square5-2" onclick="selectSquare(5,2);"><div class="chip"></div></div>
+            <div class="square" id="square5-3" onclick="selectSquare(5,3);"><div class="chip"></div></div>
+            <div class="square" id="square5-4" onclick="selectSquare(5,4);"><div class="chip"></div></div>
+            <div class="square" id="square5-5" onclick="selectSquare(5,5);"><div class="chip"></div></div>
+            <div class="square" id="square5-6" onclick="selectSquare(5,6);"><div class="chip"></div></div>
+            <div class="square" id="square5-7" onclick="selectSquare(5,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square6-0" onclick="selectSquare(6,0);"><div class="chip"></div></div>
+            <div class="square" id="square6-1" onclick="selectSquare(6,1);"><div class="chip"></div></div>
+            <div class="square" id="square6-2" onclick="selectSquare(6,2);"><div class="chip"></div></div>
+            <div class="square" id="square6-3" onclick="selectSquare(6,3);"><div class="chip"></div></div>
+            <div class="square" id="square6-4" onclick="selectSquare(6,4);"><div class="chip"></div></div>
+            <div class="square" id="square6-5" onclick="selectSquare(6,5);"><div class="chip"></div></div>
+            <div class="square" id="square6-6" onclick="selectSquare(6,6);"><div class="chip"></div></div>
+            <div class="square" id="square6-7" onclick="selectSquare(6,7);"><div class="chip"></div></div>
+        </div>
+
+        <div class="row">
+            <div class="square" id="square7-0" onclick="selectSquare(7,0);"><div class="chip"></div></div>
+            <div class="square" id="square7-1" onclick="selectSquare(7,1);"><div class="chip"></div></div>
+            <div class="square" id="square7-2" onclick="selectSquare(7,2);"><div class="chip"></div></div>
+            <div class="square" id="square7-3" onclick="selectSquare(7,3);"><div class="chip"></div></div>
+            <div class="square" id="square7-4" onclick="selectSquare(7,4);"><div class="chip"></div></div>
+            <div class="square" id="square7-5" onclick="selectSquare(7,5);"><div class="chip"></div></div>
+            <div class="square" id="square7-6" onclick="selectSquare(7,6);"><div class="chip"></div></div>
+            <div class="square" id="square7-7" onclick="selectSquare(7,7);"><div class="chip"></div></div>
+        </div>
+
+    </div>
+</body>
+</html>
