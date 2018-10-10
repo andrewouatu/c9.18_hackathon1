@@ -33,3 +33,28 @@ h1 {
     height: 70px;
     border: 1px solid black;
 }
+
+.black{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+}
+
+.white{
+    height: 25px;
+    width: 25px;
+    background-color: white;
+}
+
+.blackStart{
+    height: 25px;
+    width: 25px;
+    background-color: black;
+}
+
+.whiteStart {
+    height: 25px;
+    width: 25px;
+    background-color: white;
+}
+

@@ -5,9 +5,9 @@ var moveDirectionsArray = [[-1,-1],[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1]
 
 function initializeApp() {
 
-
+    $('div').removeClass("black");
+    $('div').removeClass("white");
 }
-
 
 
 var gameBoard = [
@@ -22,3 +22,9 @@ var gameBoard = [
                 ];
 
 
+// function addChip(row, col){
+//     $('div').addClass("white");
+//
+// }
+//
+// addChip(0,0);
