@@ -1,4 +1,13 @@
 
+$(document).ready(initializeApp);
+
+var moveDirectionsArray = [[-1,-1],[-1,0],[-1,1],[0,1],[1,1],[1,0],[1,-1],[0,-1]];
+
+function initializeApp() {
+
+
+}
+
 
 
 var gameBoard = [
@@ -11,4 +20,5 @@ var gameBoard = [
                     ["0", "0", "0", "0","0", "0","0","0"],
                     ["0", "0", "0", "0","0", "0","0","0"],
                 ];
+
 
