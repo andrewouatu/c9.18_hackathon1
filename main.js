@@ -85,9 +85,9 @@ var gameBoard = [
 // }
 
 function getClickedSquarePosition(){
-    inputPositionArray=[];
-    inputPositionArray[0]=$(event.currentTarget).attr(data-row);
-    inputPositionArray[1]=$(event.currentTarget).attr(data-col);
+    var inputPositionArray=[];
+    inputPositionArray[0]=$(event.currentTarget).attr('data-row');
+    inputPositionArray[1]=$(event.currentTarget).attr('data-col');
     console.log(inputPositionArray);
 
 }
