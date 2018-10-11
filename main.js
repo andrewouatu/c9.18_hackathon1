@@ -18,6 +18,7 @@ var moveDirectionsArray = [
 
 
 function initializeApp() {
+
     $('.square').click(getClickedSquarePosition);
 
     // var gameBoardArray = [
@@ -44,7 +45,9 @@ function initializeApp() {
 //     while (gameBoardArray[spotCheckd])
 // }
 
-var gameBoardArray = [
+
+var gameBoard = [
+
                     ["0", "0", "0", "0","0", "0","0","0"],
                     ["0", "0", "0", "0","0", "0","0","0"],
                     ["0", "0", "0", "0","0", "0","0","0"],
@@ -54,6 +57,7 @@ var gameBoardArray = [
                     ["0", "0", "0", "0","0", "0","0","0"],
                     ["0", "0", "0", "0","0", "0","0","0"],
                 ];
+
 
 
 // function findStartingChipsPositionForCurrentPlayer (gameBoard){
@@ -87,3 +91,52 @@ function getClickedSquarePosition(){
     console.log(inputPositionArray);
 
 }
+// function addClasstoChip(){
+//     $("#square" + row + "-" + column).addClass("black");
+//
+// }
+//
+// var currentLocation = [];
+//
+// function selectSquare(row, column) {
+//
+//     $("#square" + row + "-" + column).addClass("black");
+//     currentLocation.push(row);
+//     currentLocation.push(column);
+// }
+//
+// function addClass() {
+//     $("#chip").addClass("white");
+// }
+//
+// addClass();
+//
+// function addClick() {
+//     $('.square').click(chipClicked)
+// }
+//
+//
+// function chipClicked(){
+//     currentChip = event.currentTarget;
+//     $('.chip').addClass("black");
+// }
+// //
+//
+//
+// function showCard(card){
+//     $(card).addClass('hide');
+// }
+//
+// if(firstCardClicked === null){
+//     firstCardClicked = event.currentTarget;
+//     showCard(event.currentTarget);
+//
+
+
+// function addChip(row, col){
+//     $('div').addClass("white");
+//
+// }
+//
+// addChip(0,0);
+
