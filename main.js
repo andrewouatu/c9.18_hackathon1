@@ -3,6 +3,7 @@ $(document).ready(initializeApp);
 
 
 var currentPlayerChipsPosition=[];
+
 var moveDirectionsArray = [
     {row: -1, column: -1},
     {row: -1, column: 0},
@@ -15,13 +16,36 @@ var moveDirectionsArray = [
 ]
 
 
-
-
 function initializeApp() {
 
     $('.square').click(getClickedSquarePosition);
 
-    // var gameBoardArray = [
+}
+
+function getClickedSquarePosition() {
+    var inputPositionArray = [];
+    inputPositionArray[0] = $(event.currentTarget).attr("data-row");
+    inputPositionArray[1] = $(event.currentTarget).attr("data-col");
+    console.log(inputPositionArray);
+}
+
+        // var gameBoard = [
+        //
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        //     ["0", "0", "0", "1","2", "0","0","0"],
+        //     ["0", "0", "0", "2","1", "0","0","0"],
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        //     ["0", "0", "0", "0","0", "0","0","0"],
+        // ]
+
+
+
+
+
+        // var gameBoardArray = [
     //     ["0", "0", "0", "0","0", "0","0","0"],
     //     ["0", "0", "0", "0","0", "0","0","0"],
     //     ["0", "0", "0", "0","0", "0","0","0"],
@@ -33,7 +57,7 @@ function initializeApp() {
     // ];
     // findStartingChipsPositionForCurrentPlayer(gameBoardArray);
 
-}
+
 
 // var gameround = true
 // gameround = !gameround
@@ -45,18 +69,6 @@ function initializeApp() {
 //     while (gameBoardArray[spotCheckd])
 // }
 
-
-var gameBoard = [
-
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                    ["0", "0", "0", "1","2", "0","0","0"],
-                    ["0", "0", "0", "2","1", "0","0","0"],
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                    ["0", "0", "0", "0","0", "0","0","0"],
-                ];
 
 
 
@@ -84,13 +96,7 @@ var gameBoard = [
 //
 // }
 
-function getClickedSquarePosition(){
-    inputPositionArray=[];
-    inputPositionArray[0]=$(event.currentTarget).attr(data-row);
-    inputPositionArray[1]=$(event.currentTarget).attr(data-col);
-    console.log(inputPositionArray);
 
-}
 // function addClasstoChip(){
 //     $("#square" + row + "-" + column).addClass("black");
 //
