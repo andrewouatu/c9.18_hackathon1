@@ -1,148 +1,70 @@
 
 $(document).ready(initializeApp);
 
+var playerTurn = 1;
 
-var currentPlayerChipsPosition=[];
-
-var moveDirectionsArray = [
-    {row: -1, column: -1},
-    {row: -1, column: 0},
-    {row: -1, column: 1},
-    {row: 0, column: 1},
-    {row: 1, column: 1},
-    {row: 1, column: 0},
-    {row: 1, column: -1},
-    {row: 0, column: -1},
-]
+var vectorArray = [
+    [-1, -1],
+    [-1, 0],
+    [-1, 1],
+    [0, 1],
+    [1, 1],
+    [1, 0],
+    [1, -1],
+    [0, -1],
+];
 
 
 function initializeApp() {
-
     $('.square').click(getClickedSquarePosition);
-
 }
 
 function getClickedSquarePosition() {
-    var inputPositionArray = [];
-    inputPositionArray[0] = $(event.currentTarget).attr("data-row");
-    inputPositionArray[1] = $(event.currentTarget).attr("data-col");
-    console.log(inputPositionArray);
+
+    var rowPosition = parseInt($(event.currentTarget).attr("data-row"));
+    var colPosition = parseInt($(event.currentTarget).attr("data-col"));
+
+    gameBoardArray[rowPosition][colPosition] = playerTurn;
+
+    if (playerTurn === 1) {
+        playerTurn = 2;
+    } else {
+        playerTurn = 1;
+    }
+
+    console.log(gameBoardArray);
 }
 
-        // var gameBoard = [
-        //
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        //     ["0", "0", "0", "1","2", "0","0","0"],
-        //     ["0", "0", "0", "2","1", "0","0","0"],
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        //     ["0", "0", "0", "0","0", "0","0","0"],
-        // ]
+var gameBoardArray =[];
+
+for(var xAxis = 0; xAxis < 8; xAxis++){
+    gameBoardArray[xAxis] = [];
+    for(var yAxis = 0; yAxis < 8; yAxis++){
+        gameBoardArray[xAxis][yAxis] = 0;
+    }
+}
+
+gameBoardArray[3][4] = 1;
+gameBoardArray[4][3] = 1;
+gameBoardArray[3][3] = 2;
+gameBoardArray[4][4] = 2;
+
+console.log(gameBoardArray);
 
 
+// $(".square").addClass("black")
+// $(".square").addClass("white")
 
-
-
-        // var gameBoardArray = [
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    //     ["0", "0", "0", "1","2", "0","0","0"],
-    //     ["0", "0", "0", "2","1", "0","0","0"],
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    //     ["0", "0", "0", "0","0", "0","0","0"],
-    // ];
-    // findStartingChipsPositionForCurrentPlayer(gameBoardArray);
-
-
-
-// var gameround = true
-// gameround = !gameround
-
-// function checkNextToCurrentPlayerColor(startPoint, userColor, opponentColor){
-//     var possibilities = [];
-//     while (var moveDirectionsArrayIndex=0; moveDirectionsArrayIndex<moveDirectionsArray.length; moveDirectionsArrayIndex++) {
-//
-//     while (gameBoardArray[spotCheckd])
-// }
-
-
-
-
-// function findStartingChipsPositionForCurrentPlayer (gameBoard){
-// debugger;
-//     for (var rowIndex = 0; rowIndex <8; rowIndex++){
-//         var currentChip = [];
-//         currentChip[0]=rowIndex;
-//         for (var columnIndex = 0; columnIndex<8; columnIndex++) {
-//             if(gameBoard[rowIndex][columnIndex]==='2'){
-//
-//
-//                 currentChip[1]=columnIndex;
-//                 currentPlayerChipsPosition.push(currentChip);
-//                 console.log(currentChip);
-//             }
-//
-//         }
+//                               [row, col]
+// function handlePlayerTurn(clickedPositionArray){
+//     if (occupied === true) {
+//         return;
 //     }
-//     return currentPlayerChipsPosition;
-// }
-// findStartingChipsPositionForCurrentPlayer(gameBoardArray);
-// console.log(currentPlayerChipsPosition);
-//
-//
+//     for (var directionArrayIndex = 0; directionArrayIndex < directionArrayIndex.length; directionArrayIndex++){
+//         if (clickedPositionArray[0] + vectorArray[0] && clickedPositionArray[1] + vectorArray[1]) === ('other player' || 'your chip' || empty)
+//             while ....
+//     }
 // }
 
-
-// function addClasstoChip(){
-//     $("#square" + row + "-" + column).addClass("black");
-//
-// }
-//
-// var currentLocation = [];
-//
-// function selectSquare(row, column) {
-//
-//     $("#square" + row + "-" + column).addClass("black");
-//     currentLocation.push(row);
-//     currentLocation.push(column);
-// }
-//
-// function addClass() {
-//     $("#chip").addClass("white");
-// }
-//
-// addClass();
-//
-// function addClick() {
-//     $('.square').click(chipClicked)
-// }
-//
-//
-// function chipClicked(){
-//     currentChip = event.currentTarget;
-//     $('.chip').addClass("black");
-// }
-// //
-//
-//
-// function showCard(card){
-//     $(card).addClass('hide');
-// }
-//
-// if(firstCardClicked === null){
-//     firstCardClicked = event.currentTarget;
-//     showCard(event.currentTarget);
-//
-
-
-// function addChip(row, col){
-//     $('div').addClass("white");
-//
-// }
-//
-// addChip(0,0);
-
+//create for loop to go take in the array information, remove all classes, and then add the class for the current player.
+//based on the current player, use if else statement to switch between players
