@@ -2,7 +2,7 @@
 $(document).ready(initializeApp);
 
 var playerTurn = 1;
-
+var clickedPosition=[];
 var vectorArray = [
     [-1, -1],
     [-1, 0],
@@ -16,7 +16,10 @@ var vectorArray = [
 
 
 function initializeApp() {
+
+
     $('.square').click(getClickedSquarePosition);
+    printChipColorsFromGameBordArray(gameBoardArray);
 }
 
 function getClickedSquarePosition() {
@@ -24,23 +27,22 @@ function getClickedSquarePosition() {
     var rowPosition = parseInt($(event.currentTarget).attr("data-row"));
     var colPosition = parseInt($(event.currentTarget).attr("data-col"));
 
-    gameBoardArray[rowPosition][colPosition] = playerTurn;
 
-    if (playerTurn === 1) {
-        playerTurn = 2;
-    } else {
-        playerTurn = 1;
-    }
+
+
+
 
     console.log(gameBoardArray);
+    clickedPosition = [rowPosition, colPosition];
+    console.log(clickedPosition);
+    handlePlayerTurn(clickedPosition);
 }
 
 var gameBoardArray =[];
-
-for(var xAxis = 0; xAxis < 8; xAxis++){
-    gameBoardArray[xAxis] = [];
-    for(var yAxis = 0; yAxis < 8; yAxis++){
-        gameBoardArray[xAxis][yAxis] = 0;
+for(var rowIndex = 0; rowIndex < 8; rowIndex++){
+    gameBoardArray[rowIndex] = [];
+    for(var columnIndex = 0; columnIndex < 8; columnIndex++){
+        gameBoardArray[rowIndex][columnIndex] = 0;
     }
 }
 
@@ -52,19 +54,87 @@ gameBoardArray[4][4] = 2;
 console.log(gameBoardArray);
 
 
-// $(".square").addClass("black")
-// $(".square").addClass("white")
+function printChipColorsFromGameBordArray (gameBoard){
 
-//                               [row, col]
-// function handlePlayerTurn(clickedPositionArray){
-//     if (occupied === true) {
-//         return;
-//     }
-//     for (var directionArrayIndex = 0; directionArrayIndex < directionArrayIndex.length; directionArrayIndex++){
-//         if (clickedPositionArray[0] + vectorArray[0] && clickedPositionArray[1] + vectorArray[1]) === ('other player' || 'your chip' || empty)
-//             while ....
-//     }
-// }
+    for (var rowIndex = 0; rowIndex <8; rowIndex++) {
+        var currentChip = [];
+        currentChip[0] = rowIndex;
+        for (var columnIndex = 0; columnIndex < 8; columnIndex++) {
+            if (gameBoard[rowIndex][columnIndex] === 2) {
+
+                $(`[data-row='${rowIndex}'][data-col='${columnIndex}'] .chip`).addClass('black');
+                currentChip[1] = columnIndex;
+
+            } else if (gameBoard[rowIndex][columnIndex] === 1) {
+                $(`[data-row='${rowIndex}'][data-col='${columnIndex}'] .chip`).addClass('white');
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+function handlePlayerTurn(clickedPositionArray){
+    // if (occupied === true) {
+    //     return;
+    // }
+    debugger;
+    var row=clickedPositionArray[0];
+    var col= clickedPositionArray[1];
+    var otherPlayerChipPosition=[];
+    var possibleChipPosition =[];
+    for (var vectorArrayIndex = 0; vectorArrayIndex < vectorArray.length; vectorArrayIndex++){
+        if (playerTurn === 1){
+            possibleChipPosition[0] = row + vectorArray[vectorArrayIndex][0];
+            possibleChipPosition[1] = col + vectorArray[vectorArrayIndex][1];
+            row = possibleChipPosition[0];
+            col = possibleChipPosition[1];
+            console.log(row,col);
+            console.log(gameBoardArray)
+
+            if(gameBoardArray[row][col] ===2){
+                otherPlayerChipPosition.push(possibleChipPosition);
+                row = possibleChipPosition[0];
+                col = possibleChipPosition[1];
+                possibleChipPosition =[];
+                while (gameBoardArray[row][col] === 2 ) {
+                    possibleChipPosition[0] = row + vectorArray[vectorArrayIndex][0];
+                    possibleChipPosition[1] = col + vectorArray[vectorArrayIndex][1];
+                    row = possibleChipPosition[0];
+                    col = possibleChipPosition[1];
+                    otherPlayerChipPosition.push(possibleChipPosition);
+                    possibleChipPosition =[];
+
+                }
+                possibleChipPosition[0] = row + vectorArray[vectorArrayIndex][0];
+                possibleChipPosition[1] = col + vectorArray[vectorArrayIndex][1];
+                row = possibleChipPosition[0];
+                col = possibleChipPosition[1];
+                }
+                else if (gameBoardArray[row][col] ===1) {
+                gameBoardArray[clickedPosition] = playerTurn;
+
+
+                }
+            }
+
+        }
+
+    }
+    console.log(gameBoardArray);
+printChipColorsFromGameBordArray(gameBoardArray);
+if (playerTurn === 1) {
+    playerTurn = 2;
+} else {
+    playerTurn = 1;
+
+}
 
 //create for loop to go take in the array information, remove all classes, and then add the class for the current player.
 //based on the current player, use if else statement to switch between players
