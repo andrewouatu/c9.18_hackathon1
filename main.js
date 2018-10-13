@@ -28,16 +28,11 @@ function getClickedSquarePosition() {
     var colPosition = parseInt($(event.currentTarget).attr("data-col"));
 
 
-
-
-
-
     console.log(gameBoardArray);
     clickedPosition = [rowPosition, colPosition];
     console.log(clickedPosition);
     handlePlayerTurn(clickedPosition);
 }
-
 var gameBoardArray =[];
 for(var rowIndex = 0; rowIndex < 8; rowIndex++){
     gameBoardArray[rowIndex] = [];
@@ -129,12 +124,15 @@ function handlePlayerTurn(clickedPositionArray){
     }
     console.log(gameBoardArray);
 printChipColorsFromGameBordArray(gameBoardArray);
-if (playerTurn === 1) {
-    playerTurn = 2;
-} else {
-    playerTurn = 1;
+function changePlayer() {
+    if (playerTurn === 1) {
+        playerTurn = 2;
+    } else {
+        playerTurn = 1;
 
+    }
 }
+
 
 //create for loop to go take in the array information, remove all classes, and then add the class for the current player.
 //based on the current player, use if else statement to switch between players
