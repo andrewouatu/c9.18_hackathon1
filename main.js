@@ -2,16 +2,14 @@
 $(document).ready(initializeApp);
 
 var playerTurn = 1;
-var clickedPosition=[];
-var saveToTurn;
 var gameBoardArray = [
     [0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 2, 2],
-    [0, 2, 2, 2, 0, 0, 0, 0],
-    [0, 1, 0, 0, 0, 0, 0, 0],
-    [0, 0, 2, 0, 1, 0, 0, 0],
-    [0, 1, 0, 0, 2, 1, 0, 0],
-    [0, 2, 0, 0, 2, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 1, 2, 0, 0, 0],
+    [0, 0, 0, 2, 1, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0]
 ];
 var vectorArray = [
@@ -132,8 +130,9 @@ function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
             gameBoardArray[yPos][xPos]= flipValues[gameBoardArray[yPos][xPos]]
 
         }
+        changePlayer();
     }
-    changePlayer();
+
 
 }
 
