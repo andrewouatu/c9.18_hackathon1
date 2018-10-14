@@ -76,3 +76,9 @@ h1 {
     margin: auto;
 }
 
+.testing{
+    background-color: yellow;
+}
+.clicked{
+    background-color: hotpink;
+}
