@@ -112,7 +112,7 @@ function getValueFromGameBoard(y,x){
 
 function checkIfItValidToClick (row,col){
     if (gameBoardArray[row][col] !==0){
-        
+
         return false;
     }
 }
@@ -169,8 +169,10 @@ function printChipColorsFromGameBordArray (gameBoard){
 function changePlayer() {
     if (playerTurn === 1) {
         playerTurn = 2;
+        $('#colorTurn').text('Black Player Turn!')
     } else {
         playerTurn = 1;
+        $('#colorTurn').text('White Player Turn!')
 
     }
 }
