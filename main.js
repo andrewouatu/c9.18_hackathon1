@@ -38,26 +38,27 @@ function getClickedSquarePosition() {
         return;
     }
     if( checkIfNoPossibleChipToFlip(rowPosition,colPosition)===false){
-        console.log("returnet from 8 falers")
+        console.log("failed all vector array tests")
         return;
     }
 
-    toRevileAndFlipChipsWithCurrentPlayerColor (rowPosition,colPosition);
+    toRevealAndFlipChipsWithCurrentPlayerColor (rowPosition,colPosition);
     printChipColorsFromGameBordArray (gameBoardArray);
 }
 
 
-function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
+function toRevealAndFlipChipsWithCurrentPlayerColor (row, col){
 
     var possiblePosition = [];
     var oppositePlayer = null;
+    var verifiedPositionsToFlip = [];
 
     if (playerTurn ===1) {
         oppositePlayer = 2;
     } else {
         oppositePlayer = 1;
     }
-    var verifiedPositionsToFlip = [];
+
     for (var vectorArrayIndex = 0; vectorArrayIndex < vectorArray.length; vectorArrayIndex++) {
         var positionsToFlip = [];
         possiblePosition[0] = row + vectorArray[vectorArrayIndex][0];
