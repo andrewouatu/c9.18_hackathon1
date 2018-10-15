@@ -52,19 +52,23 @@ gameBoardArray[4][4] = 2;
 console.log(gameBoardArray);
 
 
+
+//                               [row, col]
+function handlePlayerTurn(clickedPositionArray){
+    if (occupied === true) {
+        return;
+    }
+    for (var directionArrayIndex = 0; directionArrayIndex < directionArrayIndex.length; directionArrayIndex++){
+        if (clickedPositionArray[0] + vectorArray[0]
+            clickedPositionArray[1] + vectorArray[1] === ('other player' || 'your chip' || empty)
+            while ....
+    }
+}
+
 // $(".square").addClass("black")
 // $(".square").addClass("white")
 
-//                               [row, col]
-// function handlePlayerTurn(clickedPositionArray){
-//     if (occupied === true) {
-//         return;
-//     }
-//     for (var directionArrayIndex = 0; directionArrayIndex < directionArrayIndex.length; directionArrayIndex++){
-//         if (clickedPositionArray[0] + vectorArray[0] && clickedPositionArray[1] + vectorArray[1]) === ('other player' || 'your chip' || empty)
-//             while ....
-//     }
-// }
-
 //create for loop to go take in the array information, remove all classes, and then add the class for the current player.
 //based on the current player, use if else statement to switch between players
+
+//the only win condition is if the first vector is the opposite color, and the while loop shows a 0 after the opposite number
