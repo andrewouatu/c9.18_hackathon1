@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+
+    <title>Reversi Hackathon #1</title>
+
+</head>
+<body>
+        <h1>Reversi</h1>
+
+        <div id="colorTurn">White Player Turn!</div>
+
+        <div id="gameBoard">
+
+            <div class="boardRow">
+                <div class="square" data-row="0" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="0" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="1" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="1" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="2" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="2" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="3" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="3" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="4" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="4" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="5" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="5" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="6" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="6" data-col="7">
+                    <div class="chip"></div>
+                </div>
+            </div>
+
+            <div class="boardRow">
+                <div class="square" data-row="7" data-col="0">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="1">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="2">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="3">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="4">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="5">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="6">
+                    <div class="chip"></div>
+                </div>
+                <div class="square" data-row="7" data-col="7">
+                    <div class="chip"></div>
+                </div>
+             </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
