@@ -42,41 +42,15 @@ function getClickedSquarePosition() {
         return;
     }
 
-    toRevileAndFlipChipsWithCurrentPlayerColor (rowPosition,colPosition)
+    toRevileAndFlipChipsWithCurrentPlayerColor (rowPosition,colPosition);
     printChipColorsFromGameBordArray (gameBoardArray);
-
-
-
-
-
-
-
-
 }
+
+
 function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
-    // $(".square[data-row="+row+"][data-col="+col+"]").addClass('clicked');
 
     var possiblePosition = [];
-    var truePositionArray=[];
     var oppositePlayer = null;
-    /*
-        //get the current player
-        //get the opposite player
-        //make an array to store chips to flip for this spot
-        //check each direction from the current spot
-            //make an array of possible chips to flip for this direction
-            //if you encounter opposite color
-                //T: loop moving in current direction.
-                    //add current spot to possible chips to flip
-                    //if current spot is player's color
-                        //T: add possible chips to "chips to flip for this spot"
-                        continue loop
-                        //F: exit loop
-
-
-
-     */
-
 
     if (playerTurn ===1) {
         oppositePlayer = 2;
@@ -89,12 +63,8 @@ function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
         possiblePosition[0] = row + vectorArray[vectorArrayIndex][0];
         possiblePosition[1] = col + vectorArray[vectorArrayIndex][1];
 
-        // $(".testing").removeClass('testing');
-        // $(".square[data-row="+possiblePosition[0]+"][data-col="+possiblePosition[1]+"]").addClass('testing');
-        console.log(possiblePosition);
 
         if (getValueFromGameBoard(possiblePosition[0],possiblePosition[1]) === oppositePlayer){
-            // saveToTurn=[possiblePosition[0],possiblePosition[1]];
             while(getValueFromGameBoard(possiblePosition[0],possiblePosition[1]) === oppositePlayer){
                 positionsToFlip.push( possiblePosition.slice())
                 possiblePosition[0] += vectorArray[vectorArrayIndex][0];
@@ -106,7 +76,6 @@ function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
                     gameBoardArray[row][col] = playerTurn;
                 }
                 verifiedPositionsToFlip = verifiedPositionsToFlip.concat(positionsToFlip);
-                console.log("these should be flipped",positionsToFlip);
 
             }
 
@@ -121,12 +90,7 @@ function toRevileAndFlipChipsWithCurrentPlayerColor (row, col){
         for(var flipIndex=0; flipIndex<verifiedPositionsToFlip.length; flipIndex++){
             var xPos = verifiedPositionsToFlip[flipIndex][1];
             var yPos = verifiedPositionsToFlip[flipIndex][0];
-            //var valueAtPosition = gameBoardArray[yPos][xPos];
-            // if(valueAtPosition===1){
-            //     gameBoardArray[yPos][xPos] gameBoardArray[yPos][xPos]= 2;
-            // } else {
-            //     gameBoardArray[yPos][xPos] =1;
-            // }
+
             gameBoardArray[yPos][xPos]= flipValues[gameBoardArray[yPos][xPos]]
 
         }
@@ -148,8 +112,7 @@ function getValueFromGameBoard(y,x){
 
 function checkIfItValidToClick (row,col){
     if (gameBoardArray[row][col] !==0){
-
-        console.log('it returns because it was clicked')
+        
         return false;
     }
 }
@@ -213,5 +176,3 @@ function changePlayer() {
 }
 
 
-//create for loop to go take in the array information, remove all classes, and then add the class for the current player.
-//based on the current player, use if else statement to switch between players
